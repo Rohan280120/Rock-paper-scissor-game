@@ -61,3 +61,16 @@ img{
     display: inline;
     padding: 1rem;
 }
+.final_winner{
+    margin-top: 9rem;
+}
+#winner{
+    background-color: #081b31;
+
+    justify-content: center;
+    display: inline;
+    color: white;
+
+    align-items: center;
+    font-size: 6rem;
+}

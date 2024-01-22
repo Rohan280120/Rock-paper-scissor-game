@@ -1,10 +1,13 @@
 let userScore=0;
 let compScore=0;
 
+
 const choices=document.querySelectorAll(".choice");
 const msg=document.querySelector("#msg");
 let userCurrentScore=document.querySelector("#user-score");
 let compCurrentScore=document.querySelector("#comp-score");
+let winner_msg=document.querySelector("#winner");
+
 
 const genCompChoice=()=>{
     const option=["rock","paper","scissors"];
@@ -19,6 +22,26 @@ const DrawGame=()=>{
 
 
 
+}
+const isGameFinished=()=>{
+    if(userCurrentScore.innerText==5){
+        winner_msg.innerText="Congratulation!You won";
+        setInterval(()=>{
+            window.location.href="/Users/thakkkarrohannilesh/Documents/React/Rock-paper-scissor/index.html"
+            userCurrentScore.innerText=0;
+            compCurrentScore.innerHTML=0;
+        },3000);
+       
+
+    }
+    else if(compCurrentScore.innerText==5){
+        winner_msg.innerText="Sorry! You lost";
+        setInterval(()=>{
+            window.location.href="/Users/thakkkarrohannilesh/Documents/React/Rock-paper-scissor/index.html"
+            userCurrentScore.innerText=0;
+            compCurrentScore.innerHTML=0;
+        },3000);
+    }
 }
 const showWinner=(userWin,userChoice,compChoice)=>{
     if(userWin){
@@ -38,6 +61,8 @@ const showWinner=(userWin,userChoice,compChoice)=>{
          compCurrentScore.innerText=compScore
 
     }
+    isGameFinished();
+
 }
 const playgame=(userChoice)=>{
     const compChoice=genCompChoice();
